@@ -22,9 +22,8 @@ The DAOS storage cluster in LRZ's SuperMUC-NG Phase2 system consists of
 
 * 16x 32GiB TruDDR4 Memory (3200MT)
 
-* 16x 128GiB Intel Optane 100 Series Persistent Memory
-
-* 8x Intel P5500 3.84TB U.2 NVMe SSD
+* 16x [128GiB Intel Optane 200 Series Persistent Memory](https://ark.intel.com/content/www/us/en/ark/products/series/203877/intel-optane-persistent-memory-200-series.html)
+* 8x [Intel D7-P5500 3.84TB U.2 NVMe SSD](https://ark.intel.com/content/www/us/en/ark/products/202705/intel-ssd-d7p5500-series-3-84tb-2-5in-pcie-4-0-x4-3d3-tlc.html)
 
 * 2x Mellanox ConnectX-6 1-port InfiniBand HDR adapter
 
@@ -72,11 +71,11 @@ On the clients, each MPI task is communicating through the IB interface on the s
 
 All servers and clients were installed with the following software stack:
 
-* SLES 15.3 (kernel version 5.3.18-57-default)
+* [SLES 15.3](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP3/) (kernel version 5.3.18-57-default)
 
-* MLNX\_OFED\_LINUX-5.5-1.0.3.2
+* [MLNX\_OFED\_LINUX-5.5-1.0.3.2](https://docs.nvidia.com/networking/display/MLNXOFEDv551032/Release+Notes)
 
-* DAOS 2.0.2-2
+* [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/Leap15/)
 
 The following DAOS server and client configuration files were used.
 With the exception of the separation of the DAOS nodes into servers and clients
