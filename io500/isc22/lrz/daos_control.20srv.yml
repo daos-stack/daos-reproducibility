@@ -1,0 +1,22 @@
+########################################################################
+#                                                                      #
+# daos_control.yml configuration file for LRZ SNG-Phase2 (DAOS v2.0)   #
+#                                                                      #
+# 2022-03-25 Michael Hennecke <michael.hennecke@intel.com>             #
+#                                                                      #
+########################################################################
+
+name: daos_server
+
+port: 10001
+
+hostlist:
+- m02r03s[01-10]dao:10001
+- m02r04s[01-10]dao:10001
+
+transport_config:
+  allow_insecure: false
+  ca_cert: /etc/daos/certs/daosCA.crt
+  key:     /etc/daos/certs/admin.key
+  cert:    /etc/daos/certs/admin.crt
+
