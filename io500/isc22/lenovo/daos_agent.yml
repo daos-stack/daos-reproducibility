@@ -1,0 +1,21 @@
+# DAOS agent configuration file for Lenox ICX systems
+
+name: daos_server
+
+access_points:
+- nvm0801-ib0
+- nvm0802-ib0
+- nvm0803-ib0
+
+port: 10001
+
+transport_config:
+  allow_insecure: false
+  ca_cert: /etc/daos/certs/daosCA.crt
+  key:     /etc/daos/certs/agent.key
+  cert:    /etc/daos/certs/agent.crt
+
+runtime_dir: /var/run/daos_agent
+
+log_file: /var/daos/daos_agent.log
+

@@ -1,0 +1,101 @@
+# DAOS 2.1.102 server configuration file for Lenox ICX systems
+# (SR630v2, using dual 8352Y 32core sockets and 10x NVMe)
+
+name: daos_server
+
+access_points:
+- nvm0801-ib0
+- nvm0802-ib0
+- nvm0803-ib0
+
+port: 10001
+
+transport_config:
+  ca_cert:         /etc/daos/certs/daosCA.crt
+  key:             /etc/daos/certs/server.key
+  cert:            /etc/daos/certs/server.crt
+  client_cert_dir: /etc/daos/certs/clients
+
+provider: ofi+verbs;ofi_rxm
+
+socket_dir: /var/run/daos_server
+
+nr_hugepages: 40960
+
+disable_vfio: false
+enable_vmd: false
+
+control_log_mask: DEBUG
+control_log_file: /var/daos/daos_server.log
+helper_log_file: /var/daos/daos_admin.log
+
+telemetry_port: 9191
+
+crt_timeout: 30
+
+engines:
+
+-
+  pinned_numa_node: 0
+  targets: 20
+  nr_xs_helpers: 5
+
+  fabric_iface: ib0
+  fabric_iface_port: 31416
+
+  log_mask: WARN
+  log_file: /var/daos/daos_engine.0.log
+
+  env_vars:
+    - PMEM_NO_FLUSH=1
+    - FI_UNIVERSE_SIZE=16383
+    - FI_OFI_RXM_USE_SRX=1
+    - FI_VERBS_PREFER_XRC=1
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /var/daos/pmem0
+    scm_list:
+    - /dev/pmem0
+  -
+    class: nvme
+    bdev_list:
+    - "0000:65:00.0"
+    - "0000:66:00.0"
+    - "0000:67:00.0"
+    - "0000:68:00.0"
+    - "0000:ca:00.0"
+
+-
+  pinned_numa_node: 1
+  targets: 20
+  nr_xs_helpers: 5
+
+  fabric_iface: ib1
+  fabric_iface_port: 32416
+
+  log_mask: WARN
+  log_file: /var/daos/daos_engine.1.log
+
+  env_vars:
+    - PMEM_NO_FLUSH=1
+    - FI_UNIVERSE_SIZE=16383
+    - FI_OFI_RXM_USE_SRX=1
+    - FI_VERBS_PREFER_XRC=1
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /var/daos/pmem1
+    scm_list:
+    - /dev/pmem1
+  -
+    class: nvme
+    bdev_list:
+    - "0000:e3:00.0"
+    - "0000:e4:00.0"
+    - "0000:e5:00.0"
+    - "0000:e6:00.0"
+    - "0000:cb:00.0"
+

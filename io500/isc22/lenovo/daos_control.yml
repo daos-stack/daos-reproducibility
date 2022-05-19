@@ -1,0 +1,15 @@
+# DAOS management tool (dmg) configuration file for Lenox ICX systems
+
+name: daos_server
+
+port: 10001
+
+hostlist:
+- nvm08[01-05]-ib0
+
+transport_config:
+  allow_insecure: false
+  ca_cert: /etc/daos/certs/daosCA.crt
+  key:     /etc/daos/certs/admin.key
+  cert:    /etc/daos/certs/admin.crt
+
