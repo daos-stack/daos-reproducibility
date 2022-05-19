@@ -12,15 +12,17 @@ Reproducibility information for benchmarks submitted to the ISC22
 The "Lenox" supercomputer in Lenovo's HPC Innovation Center in Stuttgart, Germany
 is a production resource that has been in continuous operation since mid 2015
 (see the [June/2015 Top500](https://top500.org/system/178548/)).
-It is continuously refreshed to include the latest generation HPC compute nodes,
+It is regularly refreshed to include the latest generation HPC compute nodes,
 HPC fabrics, and HPC storage technology.
 
 The “Lenox3” partition on which this IO500-ISC22 submission is based includes
 Intel Ice Lake based DAOS servers, as well as Intel Ice Lake based compute nodes.
-This partition has been available to Lenox users since September 2021. 
+This partition has been available to Lenox users since September 2021 (DAOS servers)
+and February 2022 (compute nodes).
 
 The main Lenox users are Lenovo HPC&AI application specialists worldwide,
 Lenovo business partners, as well as Lenovo customers and prospects.
+
 
 ## Storage System
 
@@ -57,7 +59,7 @@ DAOS storage software references:
 
 The Ice Lake based compute nodes used for the IO500 benchmarks are Lenovo SD630v2 servers:
 
-* 2x Intel Xeon Platinum 8360Y CPU @ 2.x0GHz (36 cores)
+* 2x Intel Xeon Platinum 8360Y CPU @ 2.40GHz (36 cores)
 
 * 16x 16GiB TruDDR4 Memory (3200MT)
 
@@ -70,7 +72,7 @@ Reference information for the compute nodes:
 
 ## High-Performance Fabric
 
-The HPC Fabric is a fully non-blocking 2-stage HDR InfiniBand network, using 
+The HPC Fabric is a fully non-blocking 2-stage HDR InfiniBand network, using
 [Mellanox QM8790 Quantum](https://network.nvidia.com/related-docs/prod_ib_switch_systems/PB_QM8790.pdf)
 switches (as Edge Switches and as Core Switches).
 
@@ -89,6 +91,8 @@ All servers and clients were installed with the following software stack:
 
 * [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/CentOS8/)
 
+### DAOS configuration
+
 The following DAOS server and client configuration files were used.
 These represent the production-level setup of the storage system:
 
@@ -100,7 +104,7 @@ These represent the production-level setup of the storage system:
 ### Client environment
 
 Lenovo's Lenox cluster uses Slurm for resource scheduling.
-The Slurm job control statements for Lenox have been included in
+The Slurm job control statements for Lenox have been added to
 the IO500 run script that is included in the IO500 results tarball.
 
 User environment:
