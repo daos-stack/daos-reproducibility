@@ -75,7 +75,7 @@ All servers and clients were installed with the following software stack:
 
 * [MLNX\_OFED\_LINUX-5.5-1.0.3.2](https://docs.nvidia.com/networking/display/MLNXOFEDv551032/Release+Notes)
 
-* [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/Leap15/)
+* [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/Leap15/packages/x86_64/)
 
 The following DAOS server and client configuration files were used.
 With the exception of the separation of the DAOS nodes into servers and clients

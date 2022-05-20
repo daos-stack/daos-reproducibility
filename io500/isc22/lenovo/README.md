@@ -19,7 +19,6 @@ The “Lenox3” partition on which this IO500-ISC22 submission is based include
 Intel Ice Lake based DAOS servers, as well as Intel Ice Lake based compute nodes.
 This partition has been available to Lenox users since September 2021 (DAOS servers)
 and February 2022 (compute nodes).
-
 The main Lenox users are Lenovo HPC&AI application specialists worldwide,
 Lenovo business partners, as well as Lenovo customers and prospects.
 
@@ -27,7 +26,8 @@ Lenovo business partners, as well as Lenovo customers and prospects.
 ## Storage System
 
 The Ice Lake based DAOS storage cluster in Lenovo's Lenox cluster consists of
-6x Lenovo SR630v2 servers, currently running DAOS Version 2.0.2-2 on CentOS 8.4:
+6x Lenovo SR630v2 servers, currently running DAOS Version 2.0.2-2 on CentOS 8.4
+(five of those six servers were used for the IO500-ISC22 submisisons):
 
 * 2x Intel Xeon Platinum 8352Y CPU @ 2.20GHz (32 cores)
 
@@ -89,7 +89,7 @@ All servers and clients were installed with the following software stack:
 
 * [MLNX\_OFED\_LINUX-5.5-1.0.3.2](https://docs.nvidia.com/networking/display/MLNXOFEDv551032/Release+Notes)
 
-* [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/CentOS8/)
+* [DAOS 2.0.2-2](https://packages.daos.io/v2.0.2/CentOS8/packages/x86_64/)
 
 ### DAOS configuration
 
