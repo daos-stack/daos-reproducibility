@@ -114,5 +114,8 @@ User environment:
 
 ## IO500 List Entries
 
-Will be cross-referenced after the publication of the IO500-ISC22 list...
+
+* Lenovo-Lenox3 [IO500 ISC22 #15](https://io500.org/submissions/view/608)
+
+* Lenovo-Lenox3 [10-Node ISC22 #11](https://io500.org/submissions/view/605)
 

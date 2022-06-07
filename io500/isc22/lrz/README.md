@@ -111,5 +111,7 @@ The IO500 run script is included in the IO500 results tarball.
 
 ## IO500 List Entries
 
-Will be cross-referenced after the publication of the IO500-ISC22 list...
+* SuperMUC-NG Phase2 [IO500 ISC22 #8](https://io500.org/submissions/view/596)
+
+* SuperMUC-NG Phase2 [10-Node ISC22 #6](https://io500.org/submissions/view/614)
 
