@@ -12,7 +12,7 @@ page on IO500.
 ## IO500.org Reproducibility Questionnaire
 
 Answers to the _IO500.org Reproducibility Questionnaire_ are provided in the
-[io500-reproducibility.lrz-sng2.md](io500-reproducibility.lrz-sng2.md) document.
+[io500-reproducibility.riken-fx700.md](io500-reproducibility.riken-fx700.md) document.
 Note that this document covers two different _user-selectable_ data protection schemes
 to address the different requirements of the _Production_ list and _Research_ list.
 
