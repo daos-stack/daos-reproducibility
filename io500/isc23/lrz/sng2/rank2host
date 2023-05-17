@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# returns "$NAME $RANK"
+# where $NAME is the IP name of the engine interface that corresponds to $RANK=$1
+# (returns a list for all ranks if no $1 is given)
+#
+dmg system query -j -r=$1 | jq -r '.response.members[] | .rank, .fabric_uri' | paste - - \
+  | sed "s#\s.*//\([0-9.]*\):[0-9]*# \1#g" | while read RANK IP
+do
+ HOST=`host $IP|cut -d' ' -f5|cut -d'.' -f1`
+ echo "$HOST $RANK"
+done
