@@ -1,0 +1,104 @@
+# DAOS 2.4 server configuration file
+
+name: daos_server
+
+access_points:
+- daos0
+
+port: 10001
+
+transport_config:
+  ca_cert:         /etc/daos/certs/daosCA.crt
+  key:             /etc/daos/certs/server.key
+  cert:            /etc/daos/certs/server.crt
+  client_cert_dir: /etc/daos/certs/clients
+
+#provider: ucx+rc_x
+provider: ofi+verbs;ofi_rxm
+#provider: ofi+tcp;ofi_rxm
+
+socket_dir: /var/run/daos_server
+
+disable_vfio: false
+disable_vmd: true
+enable_hotplug: false
+crt_ctx_share_addr: 0
+disable_srx: false
+core_dump_filter: 0x13
+
+control_log_mask: DEBUG
+control_log_file: /var/daos/daos_server.log
+helper_log_file: /var/daos/daos_admin.log
+
+telemetry_port: 9191
+
+crt_timeout: 120
+
+engines:
+
+-
+  pinned_numa_node: 0
+  targets: 32
+  nr_xs_helpers: 2
+
+  fabric_iface: ib0
+  fabric_iface_port: 31416
+
+  log_mask: INFO
+# log_mask: DEBUG
+  log_file: /var/daos/daos_engine.0.log
+
+  env_vars:
+    - PMEM_NO_FLUSH=1
+    - FI_UNIVERSE_SIZE=16383
+    - FI_OFI_RXM_USE_SRX=1
+    - FI_VERBS_PREFER_XRC=1
+    - D_LOG_MASK=INFO
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /var/daos/pmem0
+    scm_list:
+    - /dev/pmem0
+  -
+    class: nvme
+    bdev_list:
+    - "0000:65:00.0"
+    - "0000:66:00.0"
+    - "0000:67:00.0"
+    - "0000:68:00.0"
+
+-
+  pinned_numa_node: 1
+  targets: 32
+  nr_xs_helpers: 2
+
+  fabric_iface: ib1
+  fabric_iface_port: 32416
+
+  log_mask: INFO
+# log_mask: DEBUG
+  log_file: /var/daos/daos_engine.1.log
+
+  env_vars:
+    - PMEM_NO_FLUSH=1
+    - FI_UNIVERSE_SIZE=16383
+    - FI_OFI_RXM_USE_SRX=1
+    - FI_VERBS_PREFER_XRC=1
+    - D_LOG_MASK=INFO
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /var/daos/pmem1
+    scm_list:
+    - /dev/pmem1
+  -
+    class: nvme
+    bdev_list:
+    - "0000:e3:00.0"
+    - "0000:e4:00.0"
+    - "0000:e5:00.0"
+    - "0000:e6:00.0"
+

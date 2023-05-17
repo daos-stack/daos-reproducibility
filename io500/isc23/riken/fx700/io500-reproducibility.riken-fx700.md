@@ -1,5 +1,5 @@
 
-# IO500 Reproducibility - ISC23 - LRZ - SuperMUC-NG-Phase2-EC
+# IO500 Reproducibility - ISC23 - Riken - FX700
 
 > The goal of these questions are to demonstrate that your IO500 benchmark execution is valid, can be
 > reproduced, and provide additional details of your submitted storage system. Along with the other
@@ -13,17 +13,15 @@
 > benchmarking, system test, systems research), the general use and purpose of the data generated
 > by the applications running on it.
 
-SuperMUC-NG is the name of the high-end supercomputer at the Leibniz-Rechenzentrum (Leibniz
-Supercomputing Centre) in Garching near Munich (the MUC suffix is borrowed from the Munich airport code).
-With more than 311,000 cores and a peak performance of more than 26.9 Petaflop/s
-(=10^15 Floating Point Operations per second), it is one of the fastest supercomputers in the world.
+The FX700 cloud system operated by RIKEN Center for Computational Science (R-CCS) is based on the same
+Fujitsu A64FX CPUs as the [Supercomputer Fugaku](https://www.r-ccs.riken.jp/en/fugaku/about/).
+Instead of the [Tofu-D](https://doi.org/10.1109/CLUSTER.2018.00090) torus interconnect of Fugaku,
+it uses an InfiniBand EDR network as its HPC interconnect.
 
-SuperMUC-NG is available to all European researchers of the PRACE member states
-to expand the frontiers of science and engineering.
+* [FUJITSU Supercomputer PRIMEHPC FX700](https://www.fujitsu.com/global/products/computing/servers/supercomputer/)
+* [FUJITSU Processor A64FX](https://www.fujitsu.com/global/products/computing/servers/supercomputer/a64fx/)
 
-SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 2022/2023.
-
-[https://doku.lrz.de/display/PUBLIC/High+Performance+Computing](https://doku.lrz.de/display/PUBLIC/High+Performance+Computing)
+Riken's FX700 cloud system is available to researchers from RIKEN and across Japan.
 
 ## AVAILABILITY
 
@@ -32,10 +30,7 @@ SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 
 >
 > Please describe the availability of the system to users and who are its set of most regular users.
 
-SuperMUC-NG is available to all European researchers of the PRACE member states
-to expand the frontiers of science and engineering.
-
-SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 2022/2023.
+Riken's FX700 cloud system is available to researchers from RIKEN and across Japan.
 
 ## STORAGE SYSTEM SOFTWARE
 
@@ -44,10 +39,11 @@ SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 
 > benchmarking, system test, systems research), the general use and purpose of the data generated
 > by the applications running on it.
 
-SuperMUC-NG is available to all European researchers of the PRACE member states
-to expand the frontiers of science and engineering.
+Riken's FX700 cloud system is available to researchers from RIKEN and across Japan.
 
-SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 2022/2023.
+The DAOS storage system in particular is supporting co-design activities as part of the
+"Fugaku NeXT" feasibility study, which is funded by the Ministry of Education, Culture,
+Sports, Science and Technology (MEXT) of Japan.
  
 > How is this software available? (e.g., commercially, open-source, not publicly available) Note that if
 > the storage software is not open-source or commercially available, then a general description
@@ -57,37 +53,34 @@ SuperMUC-NG Phase2 is the expansion of this supercomputer, which is deployed in 
 >
 > List either product webpage or open-source repo of the exact software used in IO500.
 
-The storage software is Distributed Asynchronous Object Store (DAOS), currently at Version 2.3-105-tb.
+The storage software is Distributed Asynchronous Object Store (DAOS), currently at Version 2.3-105-1.
 DAOS is completely open-source:
 
 * DAOS [github repository](https://github.com/daos-stack/daos)
 * DAOS [packages repository](https://packages.daos.io/)
 * DAOS [documentation](https://docs.daos.io/)
-* [SC-Asia 2020 paper](https://doi.org/10.1007/978-3-030-48842-0_3)
-  _DAOS: A Scale-Out High Performance Storage Stack for Storage Class Memory_
-* [SC-Asia 2023 paper](https://doi.org/10.1145/3581576.3581577)
-  _Understanding DAOS Storage Performance Scalability_
+* SC-Asia 2020 paper [DAOS: A Scale-Out High Performance Storage Stack for Storage Class Memory](https://doi.org/10.1007/978-3-030-48842-0_3)
+* SC-Asia 2023 paper [Understanding DAOS Storage Performance Scalability](https://doi.org/10.1145/3581576.3581577)
+* SC-Asia 2023 paper [Evaluating DAOS Storage on ARM64 Clients](https://doi.org/10.1145/3581576.3581616)
 
 Commercial support for DAOS is available from multiple companies. 
-For SuperMUC-NG Phase2, DAOS support is provided by Lenovo and Intel.
  
 > Give any and all additional details of this specific storage deployment: (e.g., type of storage server
 > product such IBM ESS or DDN SFA400X2, use of Ext4 or some other file system on each storage
 > node, dual connected storage media to storage servers).
 
-The DAOS storage cluster in LRZ's SuperMUC-NG Phase2 system consists of
-42x Lenovo SR630v2 servers, currently running DAOS Version 2.3.105-1 on SLES 15.4:
+The DAOS storage cluster in Riken's FX700 cloud system consists of
+1x Intel M50CYP server, currently running DAOS Version 2.3.105-1 on Rocky Linux 8.7:
 
-* 2x Intel Xeon Platinum 8352Y CPU @ 2.20GHz
-* 16x 32GiB TruDDR4 Memory (3200MT)
+* 2x Intel Xeon Platinum 8360Y CPU @ 2.20GHz (36 core)
+* 16x 64GiB DDR4 Memory
 * 16x [128GiB Intel Optane 200 Series Persistent Memory](https://ark.intel.com/content/www/us/en/ark/products/series/203877/intel-optane-persistent-memory-200-series.html)
 * 8x [Solidigm/Intel D7-P5500 3.84TB U.2 NVMe SSD](https://www.solidigm.com/content/dam/solidigm/en/site/products/data-center/d7/p5510/documents/d7-p5510-series-product-brief.pdf)
-* 2x Mellanox ConnectX-6 1-port InfiniBand HDR adapter
+* 2x Mellanox ConnectX-6 1-port InfiniBand **EDR** adapter
 
-Reference information for the storage solution:
+Reference information for the storage server:
 
-* Lenovo [DAOS Solution Guide](https://lenovopress.lenovo.com/lp1421-designing-daos-storage-solutions-with-sr630-v2)
-* Lenovo [SR630v2 Product Guide](https://lenovopress.lenovo.com/lp1391-thinksystem-sr630-v2-server)
+* Intel Server System [M50CYP](https://www.intel.com/content/www/us/en/products/details/servers/server-systems/server-system-m50cyp/products.html)
 
 ## RUNTIME ENVIRONMENT
 
@@ -115,7 +108,7 @@ Reference information for the storage solution:
 
 Full reproducibility documentation including the DAOS server configuration files as well as
 client-side setup and run scripts is provided in the daos-stack github repository:  
-[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/lrz/sng2](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/lrz/sng2)
+[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken-fx700](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken-fx700)
 
 ## FAULT TOLERANCE MECHANISMS
 
@@ -137,7 +130,6 @@ DAOS is a scale-out software-defined storage system.
 Hardware redundancy on the individual storage server level includes dual power supplies
 (with redundant facility power feeds at the rack PUD level), and dual InfiniBand network interfaces
 (typically attached to different InfiniBand leaf switches).
-The servers used at LRZ are also using memory DIMMs with ECC error detection and correction. 
 All other redundancy features are provided in software.
 
 The DAOS management service is redundant, with instances running on multiple DAOS servers.
@@ -160,15 +152,19 @@ and network erasure coding (4+1P, 4+2P, 8+1P, 8+2P, 16+1P, 16+2P, etc.).
 
 **Regarding the IO500 rules**:
 
-* DAOS submissions for the **Production** list use 2-Way replication for metadata and for IOR-Hard,
+* DAOS submissions for the **Production** list typically use 2-Way replication for metadata and for IOR-Hard,
   and single-parity EC (here, 16+1P) for IOR-Easy,
   in order to satisfy the requirement of “no single point of failure”.
-* DAOS submissions for the **Research** list use sharding/striping (no data protection) for all tests,
+* DAOS submissions for the **Research** list typically use sharding/striping (no data protection) for all tests,
   in order to achieve maximum performance.
 
 Note that these choices are completely user-defined (as part of the API definitions in the IO500.ini file),
 and have been executed on the **exact same** storage system configuration without intervention
 of a storage administrator.
+
+The DAOS storage system in Riken's FX700 cluster is a single server, which is a single point of failure.
+So this DAOS deployment does not qualify as a Production system,
+even though the FX700 cluster itself is a production computational resource.
 
 ## EXECUTION
 
@@ -176,18 +172,17 @@ of a storage administrator.
 > (e.g., SLURM) to run a job on the compute cluster, which initially ran a setup process to configure
 > the client and file system, and then started the full benchmark.
 
-LRZ's SuperMUC-NG uses Slurm for resource scheduling. However, the IO500-ISC23 runs were performed in the early
-deployment stage of the Phase2 installation, before user operation started. For this reason the runs have been
-performed with interactive `mpirun` invocations, using a hostlist to specify client nodes.
+Riken's FX700 cloud system uses Slurm for resource scheduling.
 
 Full reproducibility documentation including the DAOS server configuration files as well as
 client-side setup and run scripts is provided in the daos-stack github repository:  
-[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/lrz/sng2](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/lrz/sng2)
+[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken/fx700](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken/fx700)
 
 > During the IO500 benchmark execution was the system entirely dedicated to running the
 > benchmark or were there other jobs running in the same cluster and storage system?
 
-Compute nodes and storage system were dedicated while running the benchmark.
+The FX700 cluster was shared with other jobs during general batch operation, managed by Slurm.
+The storage system was dedicated while running the benchmark. 
 
 ## CACHING
 
@@ -224,11 +219,11 @@ and the DAOS POSIX container used in the IO500 benchmarks is the primary storage
 All runs have been repeated multiple times to ensure consistency.
 
 All results have been reviewed for plausibility and are reasonable within the hardware performance
-boundaries of the servers, clients, and HDR InfiniBand network.
+boundaries of the server, A64FX clients, and EDR InfiniBand network.
 
-An in-depth performace sclaing study of IO500 workloads is also available in the
-[SC-Asia 2023 paper](https://doi.org/10.1145/3581576.3581577)
-_Understanding DAOS Storage Performance Scalability_.
+An in-depth performace scaling study of IO500 workloads is also available in the SC-Asia 2023 papers
+[Understanding DAOS Storage Performance Scalability](https://doi.org/10.1145/3581576.3581577) for x86\_64 clients,
+and [Evaluating DAOS Storage on ARM64 Clients](https://doi.org/10.1145/3581576.3581616) for A64FX clients.
 
 ## REPRODUCIBILITY
 

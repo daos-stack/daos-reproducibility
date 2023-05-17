@@ -48,7 +48,7 @@ DAOS storage software references:
 * [SC-Asia 2020 paper](https://doi.org/10.1007/978-3-030-48842-0_3)
   _DAOS: A Scale-Out High Performance Storage Stack for Storage Class Memory_
 * [SC-Asia 2023 paper](https://doi.org/10.1145/3581576.3581577)
-  _Understanding DAOS Performance Scalability_
+  _Understanding DAOS Storage Performance Scalability_
 
 
 ## Client Nodes

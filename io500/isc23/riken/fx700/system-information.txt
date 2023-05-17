@@ -1,0 +1,43 @@
+# see  https://www.vi4io.org/io500-info-creator/
+#
+# Riken.jp FX700 ARM64 Cluster
+#
+# Single Intel M50CYP 2-Socket IceLake DAOS Server,
+# 16x Optane 200 PMem, 8x P5510, 2x EDR fabric
+#
+
+io500_info_submitter="Michael Hennecke <michael.hennecke@intel.com>"
+io500_info_include-in-io500="true"
+io500_info_include-in-10node="true"
+
+io500_info_institution="Riken R-CCS"
+io500_info_system="Fujitsu FX700 (A64FX)"
+io500_info_system_classification="research"
+io500_info_storage_install_date="2022-11-03"
+io500_info_storage_vendor="Intel"
+io500_info_filesystem_name="/daos"
+io500_info_filesystem_type="DAOS"
+io500_info_filesystem_version="2.3.105-tb"
+
+io500_info_client_nodes="10"
+io500_info_client_procs_per_node="48"
+io500_info_client_operating_system="RHEL 8.7"
+io500_info_client_operating_system_version="8.7"
+io500_info_client_kernel_version="4.18.0-425.19.2.el8_7.aarch64"
+
+io500_info_md_nodes="0"
+io500_info_md_storage_devices="0"
+
+io500_info_ds_nodes="1"
+io500_info_ds_storage_devices="16 + 8"
+io500_info_ds_storage_type="16x 128GB Optane DC PMem 200 + 8x 3.84TB U.2 P5510 NVMe"
+io500_info_ds_volatile_memory_capacity="1TiB (16x 64GiB DDR4)"
+io500_info_ds_storage_interface="DDR-T + U.2 NVMe"
+io500_info_ds_network="InfiniBand EDR"
+io500_info_filesystem_version="2.3.105-tb"
+io500_info_ds_operating_system_version="Rocky Linux 8.7"
+io500_info_ds_overhead="0"
+
+io500_info_whatever="DAOS Server: Intel M50CYP 2-Socket Xeon 8360Y (36core), 16x 128GB Optane DC PMem 200, 8x 3.84TB U.2 P5510 NVMe, 2x ConnectX-6 EDR"
+io500_info_comment="DAOS has no dedicated metadata servers"
+

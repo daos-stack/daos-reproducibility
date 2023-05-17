@@ -44,7 +44,7 @@
 > State here that you provided all scripts/documentation that would allow someone else to
 > reproduce your environment and attempt to achieve a similar IO500 score as the submitted
 > system.
- 
+>
 > NOTE: provide all files/documentation/scripts that would enable a user to build your environment
 > and deploy the custom scripts, software, or config files once they have obtained the appropriate
 > storage system hardware and software. These may be included into the io500.tgz or into the
