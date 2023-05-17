@@ -4,6 +4,10 @@ Reproducibility information for benchmarks submitted to the ISC23
 [IO500](https://io500.org/list/isc23/io500) and
 [10-Node](https://io500.org/list/isc23/ten) Lists.
 
+General information on building and running the IO500 benchmarks with DAOS can be found in the
+[DAOS Community Wiki](https://daosio.atlassian.net/wiki/spaces/DC/pages/11167301633/IO-500+SC22)
+page on IO500.
+
 
 ## Institution
 
@@ -79,7 +83,7 @@ All servers and clients were installed with the following software stack:
 
 * [DAOS 2.3.105-tb](https://github.com/daos-stack/daos/releases/tag/v2.3.105-tb)
 
-* [MPICH-4.1.1]()
+* [MPICH-4.1.1](https://www.mpich.org/downloads/)
 
 The following DAOS server and client configuration files were used.
 These represent the production-level setup of the storage system:
@@ -91,11 +95,18 @@ These represent the production-level setup of the storage system:
 * [/etc/daos/daos\_agent.yml](daos_agent.yml)
 * [/etc/sysctl.d/95-daos-net.conf](95-daos-net.conf)
 
+For the IO500 benchmarks, two storage pools were created:
+
+* One pool that spans  [18 servers](create-pool-18srv.sh) for the full list runs,
+  using a hostfile for [24 clients](machinefile.24cli-112)
+* One pool that spans  [32 servers](create-pool-32srv.sh) for the 10-Node list runs,
+  using a hostfile for [10 clients](machinefile.10cli-112)
+
 ### Client environment
 
 LRZ's SuperMUC-NG uses Slurm for resource scheduling. However, the IO500-ISC23 runs were performed in the early
 deployment stage of the Phase2 installation, before user operation started. For this reason the runs have been
-performed with interactive `mpirun` invocations, using a hostlist to specify client nodes.
+performed with interactive `mpirun` invocations, using a hostlist to specify client nodes as described above.
 
 The IO500 run scripts are included in the IO500 results tarballs.
 
