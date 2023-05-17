@@ -9,6 +9,13 @@ General information on building and running the IO500 benchmarks with DAOS can b
 page on IO500.
 
 
+## IO500.org Reproducibility Questionnaire
+
+Answers to the _IO500.org Reproducibility Questionnaire_ are provided in the
+[io500-reproducibility.lrz-sng2.md](io500-reproducibility.lrz-sng2.md) document.
+Note that this document covers two different _user-selectable_ data protection schemes
+to address the different requirements of the _Production_ list and _Research_ list.
+
 ## Institution
 
 [LRZ](https://www.lrz.de/)
@@ -23,31 +30,25 @@ The DAOS storage cluster in LRZ's SuperMUC-NG Phase2 system consists of
 42x Lenovo SR630v2 servers, currently running DAOS Version 2.3.105-1 on SLES 15.4:
 
 * 2x Intel Xeon Platinum 8352Y CPU @ 2.20GHz
-
 * 16x 32GiB TruDDR4 Memory (3200MT)
-
 * 16x [128GiB Intel Optane 200 Series Persistent Memory](https://ark.intel.com/content/www/us/en/ark/products/series/203877/intel-optane-persistent-memory-200-series.html)
 * 8x [Solidigm/Intel D7-P5500 3.84TB U.2 NVMe SSD](https://www.solidigm.com/content/dam/solidigm/en/site/products/data-center/d7/p5510/documents/d7-p5510-series-product-brief.pdf)
-
 * 2x Mellanox ConnectX-6 1-port InfiniBand HDR adapter
 
 Reference information for the storage solution:
 
 * Lenovo [DAOS Solution Guide](https://lenovopress.lenovo.com/lp1421-designing-daos-storage-solutions-with-sr630-v2)
-
 * Lenovo [SR630v2 Product Guide](https://lenovopress.lenovo.com/lp1391-thinksystem-sr630-v2-server)
 
 DAOS storage software references:
 
 * DAOS [github repository](https://github.com/daos-stack/daos)
-
 * DAOS [packages repository](https://packages.daos.io/)
-
 * DAOS [documentation](https://docs.daos.io/)
-
-* DAOS [SC-Asia 2020 paper](https://doi.org/10.1007/978-3-030-48842-0_3)
-
-* Understanding DAOS Performance Scalability [SC-Asia 2023 paper](https://doi.org/10.1145/3581576.3581577)
+* [SC-Asia 2020 paper](https://doi.org/10.1007/978-3-030-48842-0_3)
+  _DAOS: A Scale-Out High Performance Storage Stack for Storage Class Memory_
+* [SC-Asia 2023 paper](https://doi.org/10.1145/3581576.3581577)
+  _Understanding DAOS Performance Scalability_
 
 
 ## Client Nodes
@@ -58,7 +59,6 @@ For this reason, some of the DAOS server nodes have been repurposed as client no
 Please refer to the previous section for details on the node configuration.
 
 * Full IO500 list (Production and Research): 18 DAOS nodes have been used as DAOS servers, and 24 DAOS nodes have been used as DAOS clients.
-
 * 10-Node list (Production and Research): 32 DAOS nodes have been used as DAOS servers, and 10 DAOS nodes have been used as DAOS clients.
 
 
@@ -78,11 +78,8 @@ On the clients, each MPI task is communicating through the IB interface on the s
 All servers and clients were installed with the following software stack:
 
 * [SLES 15.4](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP4/) (kernel version 5.14.21-150400.24.33-default)
-
 * [MLNX\_OFED\_LINUX-5.9-0.5.6.0](https://docs.nvidia.com/networking/display/MLNXOFEDv590560/Release+Notes)
-
 * [DAOS 2.3.105-tb](https://github.com/daos-stack/daos/releases/tag/v2.3.105-tb)
-
 * [MPICH-4.1.1](https://www.mpich.org/downloads/)
 
 The following DAOS server and client configuration files were used.
@@ -114,10 +111,7 @@ The IO500 run scripts are included in the IO500 results tarballs.
 ## IO500 List Entries
 
 * SuperMUC-NG-Phase2-EC    [ISC23         Production List #?](https://io500.org/submissions/view/668)
-
 * SuperMUC-NG-Phase2-10-EC [ISC23 10-Node Production List #?](https://io500.org/submissions/view/669)
-
 * SuperMUC-NG-Phase2       [ISC23         Research   List #?](https://io500.org/submissions/view/670)
-
 * SuperMUC-NG-Phase2-10    [ISC23 10-Node Research   List #?](https://io500.org/submissions/view/671)
 

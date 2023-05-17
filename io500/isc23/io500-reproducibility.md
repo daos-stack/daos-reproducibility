@@ -6,21 +6,21 @@
 > submitted items, the answers to these questions are used to calculate your reproducibility score and
 > whether the submission is eligible for the Production or Research list.
 
-# SYSTEM PURPOSE
+## SYSTEM PURPOSE
 
 > Please describe the purpose and general usage of the submitted system. This would include the
 > types of typical applications it supports (e.g., defense applications, molecular dynamics,
 > benchmarking, system test, systems research), the general use and purpose of the data generated
 > by the applications running on it.
 
-# AVAILABILITY
+## AVAILABILITY
 
 > Please provide the deployment timeframe of the submitted system, or for on-demand cloud
 > systems, the general period over which it is deployed and destroyed.
 
 > Please describe the availability of the system to users and who are its set of most regular users.
 
-# STORAGE SYSTEM SOFTWARE
+## STORAGE SYSTEM SOFTWARE
 
 > Please describe the purpose and general usage of the submitted system. This would include the
 > types of typical applications it supports (e.g., defense applications, molecular dynamics,
@@ -39,8 +39,7 @@
 > product such IBM ESS or DDN SFA400X2, use of Ext4 or some other file system on each storage
 > node, dual connected storage media to storage servers).
 
-
-# RUNTIME ENVIRONMENT
+## RUNTIME ENVIRONMENT
 
 > State here that you provided all scripts/documentation that would allow someone else to
 > reproduce your environment and attempt to achieve a similar IO500 score as the submitted
@@ -64,8 +63,7 @@
 >   probably has similar type of config/tuning information that would need to be shared for a
 >   user to fully reproduce the environment.
 
-
-# FAULT TOLERANCE MECHANISMS
+## FAULT TOLERANCE MECHANISMS
 
 > Does your system have a single point of failure? Please describe all mechanisms provide fault
 > tolerance for the submitted storage system. Be specific to your submission, not general storage
@@ -80,7 +78,7 @@
 > Please list any additional information needed to determine whether this system has a single point
 > of failure.
 
-# EXECUTION
+## EXECUTION
 
 > Please provide a description of how the IO500 benchmark was executed, e.g., via system scheduler
 > (e.g., SLURM) to run a job on the compute cluster, which initially ran a setup process to configure
@@ -89,7 +87,7 @@
 > During the IO500 benchmark execution was the system entirely dedicated to running the
 > benchmark or were there other jobs running in the same cluster and storage system?
 
-# CACHING
+## CACHING
 
 > Please describe all caching mechanisms in client/server that were utilized during the IO500 run.
 > This could include caching in any storage medium (e.g., SSD, RAM).
@@ -102,13 +100,13 @@
 > * Storage controller caching
 > * RAID card caching
 
-# DATA SOURCE
+## DATA SOURCE
 
 > Where is the source of truth of the data stored and later read back in the IO500 benchmark? This
 > question relates to whether the submitted system is a burst buffer layered on primary storage or
 > primary storage itself.
 
-# TRUST
+## TRUST
 
 > Please describe any steps taken to ensure that the results are trustworthy.
 > 
@@ -116,11 +114,11 @@
 > * Did you validate the score is below the physical capabilities of the deployed hardware?
 > * Did you validate that the data was persistently stored?
 
-# REPRODUCIBILITY
+## REPRODUCIBILITY
 
 > Given the 4 possible reproducibility scores listed in the 
 > [reproducibility description](https://io500.org/the-lists#reproducibility-scores),
-> what score do you believe your submission will be assigned? Please double check the de􀀂nitions of each
+> what score do you believe your submission will be assigned? Please double check the definitions of each
 > reproducibility level and ensure you have provided enough information to meet your expected
 > score.
 > 
@@ -128,5 +126,4 @@
 > * Limited
 > * Proprietary
 > * Fully Reproducible
-
 
