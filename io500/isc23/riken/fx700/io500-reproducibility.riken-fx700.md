@@ -108,7 +108,7 @@ Reference information for the storage server:
 
 Full reproducibility documentation including the DAOS server configuration files as well as
 client-side setup and run scripts is provided in the daos-stack github repository:  
-[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken-fx700](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken-fx700)
+[https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken/fx700](https://github.com/daos-stack/daos-reproducibility/tree/master/io500/isc23/riken/fx700)
 
 ## FAULT TOLERANCE MECHANISMS
 
