@@ -64,7 +64,7 @@ Please refer to the previous section for details on the node configuration.
 
 ## High-Performance Fabric
 
-The HPC Fabric is a fully non-blocking 2-stage HDR InfiniBand network, using 
+The HPC Fabric is a fully non-blocking 2-stage HDR InfiniBand network, using
 [Mellanox QM8790 Quantum](https://network.nvidia.com/related-docs/prod_ib_switch_systems/PB_QM8790.pdf)
 switches (as Edge Switches and as Core Switches).
 
@@ -107,11 +107,27 @@ performed with interactive `mpirun` invocations, using a hostlist to specify cli
 
 The IO500 run scripts are included in the IO500 results tarballs.
 
+The rules for the IO500 Production lists require that the storage system has no single point of failure.
+So the [io500-isc23.config-template.daos-rf1.ini](io500-isc23.config-template.daos-rf1.ini)
+configuration file has been used for Production runs.
+It protects against single faults by using 2-Way replication
+for metadata and IOR-Hard, and 16+1P Erasure Coding for IOR-Easy.
+
+Submissions to the IO500 Research lists are using an itentical storage system setup,
+but since the "no single point of failure" requirement does not apply to the Research list
+the [io500-isc23.config-template.daos-rf0.ini](io500-isc23.config-template.daos-rf0.ini)
+configuration file has been used for Research runs. This configuration does not use replication
+or Erasure Coding to maximize the achievable performance.
+
 
 ## IO500 List Entries
 
-* SuperMUC-NG-Phase2-EC    [ISC23         Production List #?](https://io500.org/submissions/view/668)
-* SuperMUC-NG-Phase2-10-EC [ISC23 10-Node Production List #?](https://io500.org/submissions/view/669)
-* SuperMUC-NG-Phase2       [ISC23         Research   List #?](https://io500.org/submissions/view/670)
-* SuperMUC-NG-Phase2-10    [ISC23 10-Node Research   List #?](https://io500.org/submissions/view/671)
+* SuperMUC-NG-Phase2-EC:    [ISC23         Production List  #1](https://io500.org/list/isc23/io500),
+  submission [668](https://io500.org/submissions/view/668)
+* SuperMUC-NG-Phase2-10-EC: [ISC23 10-Node Production List  #1](https://io500.org/list/isc23/ten),
+  submission [669](https://io500.org/submissions/view/669)
+* SuperMUC-NG-Phase2:       [ISC23         Research   List #11](https://io500.org/list/isc23/production),
+  submission [670](https://io500.org/submissions/view/670)
+* SuperMUC-NG-Phase2-10:    [ISC23 10-Node Research   List #10](https://io500.org/list/isc23/ten-production),
+  submission [671](https://io500.org/submissions/view/671)
 
