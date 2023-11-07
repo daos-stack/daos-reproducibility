@@ -20,7 +20,7 @@ ALCF computing resources—available to researchers from academia, industry, and
 
 Aurora will feature several technological innovations, including a revolutionary I/O system—the Distributed Asynchronous Object Store (DAOS)—to support new types of workloads. Aurora will be built on a future generation of Intel Xeon Scalable processor accelerated by Intel’s Xe compute architecture. Slingshot 11 fabric and HPE Cray EX supercomputer platform will form the backbone of the system. Programming techniques already in use on current systems will apply directly to Aurora. The system will be highly optimized across multiple dimensions that are key to success in simulation, data, and learning applications.
 
-[https://www.alcf.anl.gov/aurora]
+https://www.alcf.anl.gov/aurora
 
 ## AVAILABILITY
 
@@ -29,12 +29,12 @@ Aurora will feature several technological innovations, including a revolutionary
 
 > Please describe the availability of the system to users and who are its set of most regular users.
 
-Aurora is available to scientific esearchers worldwide via three different allocations programs:
+Aurora is available to scientific researchers worldwide via three different allocations programs:
   * The Innovative and Novel Computational Impact on Theory and Experiment (INCITE)
   * ASCR Leadership Computing Challenge (ALCC)
   * Director's Discretionary
 
-Aurora is expected to be available in 2024/2025.
+Aurora is expected to be generally available in 2024/2025.
 
 ## STORAGE SYSTEM SOFTWARE
 
@@ -83,7 +83,7 @@ Aurora is built on Intel Coyote Pass platform using 1024 server.
 Aurora compute system are Aurora Exascale Compute Blades.
 * 2x Intel(R) Xeon(R) CPU Max 9470C
 * 6x Intel Data Center GPU Max 
-* Xx 64GB DDR5
+* 16x 64GB DDR5
 * 8x HPE Slingshot NIC
 
 ## RUNTIME ENVIRONMENT
@@ -110,12 +110,12 @@ Aurora compute system are Aurora Exascale Compute Blades.
 >   probably has similar type of config/tuning information that would need to be shared for a
 >   user to fully reproduce the environment.
 
-DAOS is configured to use 600 servers as described above and 300 Aurora compute nodes. DAOS clients will use all 8 NICs provided by each client for a total of 2400 client endpoints. The DAOS servers are configured to run 2 IO engines on each server for a total of 1200 daos servers. The underlying storage is configured by the `daos scm prepare` and `daos storage scan` as documented in the DAOS Adminstration Guide.
+DAOS is configured to use 600 servers as described above and 300 Aurora compute nodes. DAOS clients will use all 8 NICs provided by each client for a total of 2400 client endpoints. The DAOS servers are configured to run 2 IO engines on each server for a total of 1200 daos server. The underlying storage is configured by the `daos scm prepare` and `daos storage scan` as documented in the DAOS Adminstration Guide.
 
 The code is built with the Intel icc compiler, icc (ICC) 2021.9.0 20230201, and uses the Aurora MPICH MPI pre-release.
-The Aurora MPICH is built from the open source [https://github.com/pmodels/mpich|MPICH].
+The Aurora MPICH is built from the open source [MPICH](https://github.com/pmodels/mpich).
 
-The code used in this run is from the commit hash, 9597af34c30be0ea4049e43c16169057227e0527.
+The daos code used in this run is from the commit hash, 9597af34c30be0ea4049e43c16169057227e0527.
 
 The io500 script is executed with these environment variables.
 ```
@@ -134,7 +134,7 @@ export LD_LIBRARY_PATH=/scratchbox/daos/mschaara/install/mpich-52.2/lib/:$LD_LIB
 export PATH=/scratchbox/daos/mschaara/install/mpich-52.2/bin/:$PATH
 ```
 
-The server YAML file is provided at [].
+The server YAML file is provided at [server.yml](https://github.com/daos-stack/daos-reproducibility/blob/aurora_sc23/io500/sc23/aurora/server.yml).
 
 ## FAULT TOLERANCE MECHANISMS
 
@@ -159,7 +159,7 @@ The Aurora hardware and software storage system is able to provide full fault to
   * Each storage server is connected to two different switches, however, each DAOS engine is connected to a single NIC. If a NIC fails, the IO engine is unreachable and the system must reconstruct from another server.
 * Storage
   * Storage data can be distribued across multiple servers based on user selected configurations.
-  * Servers datasets are selected based on fault-domain which is based on a server, so a configurations that stipulate multiple data stripes, each component is put on a different server.
+  * Servers datasets are selected based on fault-domain which is based on a server, so configurations that stipulate multiple data stripes, each component is put on a different server.
   * For this test case, data protection was configured as EC_16P1GX or RP_2GX for bulk data and RP_2G1 for metadata which allows for 1 server failure.
 
 ## EXECUTION
@@ -173,7 +173,7 @@ The Aurora hardware and software storage system is able to provide full fault to
 
 The benchmark was run using the PBS scheduler via an interactive job.
 The DAOS storage system and pool was configured prior to the execution and contained no existing data.
-The Aurora system was not idle during the io500 run but is in a preproduction environment so the competing workloads would be more sparse than during full production.
+The Aurora system was not idle during the io500 run but is in a preproduction environment so the competing workloads for the interconnect would be less than during full production.
 No other jobs were utilizing the DAOS storage system.
 
 ## CACHING
