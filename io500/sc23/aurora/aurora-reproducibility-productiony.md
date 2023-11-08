@@ -13,8 +13,8 @@
 > benchmarking, system test, systems research), the general use and purpose of the data generated
 > by the applications running on it.
 
-Aurora is Argonne National Labratories latest high performance super-computer for open science computing being deployed within the Argonne Leadership Computing Facility (ALCF).
-The Argonne Leadership Computing Facility (ALCF), a U.S. Department of Energy (DOE) Office of Science User Facility located at Argonne National Laboratory, enables breakthroughs in science and engineering by providing supercomputing resources and expertise to the research community.
+Aurora is Argonne National Labratory's latest high performance super-computer for open science computing being deployed within the Argonne Leadership Computing Facility (ALCF).
+The Argonne Leadership Computing Facility, a U.S. Department of Energy (DOE) Office of Science User Facility located at Argonne National Laboratory, enables breakthroughs in science and engineering by providing supercomputing resources and expertise to the research community.
 
 ALCF computing resources—available to researchers from academia, industry, and government agencies—support large-scale, computationally intensive projects aimed at solving some of the world's most complex and challenging scientific problems. Through awards of supercomputing time and support services, the ALCF enables its users to accelerate the pace of discovery and innovation across disciplines.
 
@@ -67,7 +67,7 @@ DAOS is completely open-source:
 
 Commercial support for DAOS is available from multiple companies. 
 
-Intel support DAOS on Aurora as part of the Aurora procurement.
+Intel supports DAOS on Aurora as part of the Aurora procurement.
 
 > Give any and all additional details of this specific storage deployment: (e.g., type of storage server
 > product such IBM ESS or DDN SFA400X2, use of Ext4 or some other file system on each storage
@@ -110,7 +110,7 @@ Aurora compute system are Aurora Exascale Compute Blades.
 >   probably has similar type of config/tuning information that would need to be shared for a
 >   user to fully reproduce the environment.
 
-DAOS is configured to use 600 servers as described above and 300 Aurora compute nodes. DAOS clients will use all 8 NICs provided by each client for a total of 2400 client endpoints. The DAOS servers are configured to run 2 IO engines on each server for a total of 1200 daos server. The underlying storage is configured by the `daos scm prepare` and `daos storage scan` as documented in the DAOS Adminstration Guide.
+DAOS is configured to use 642 servers as described above and 300 Aurora compute nodes. DAOS clients will use all 8 NICs provided by each client for a total of 2400 client endpoints. The DAOS servers are configured to run 2 IO engines on each server for a total of 1200 daos server engines. The underlying storage is configured by the `daos scm prepare` and `daos storage scan` as documented in the DAOS Adminstration Guide.
 
 The code is built with the Intel icc compiler, icc (ICC) 2021.9.0 20230201, and uses the Aurora MPICH MPI pre-release.
 The Aurora MPICH is built from the open source [MPICH](https://github.com/pmodels/mpich).
@@ -135,6 +135,7 @@ export PATH=/scratchbox/daos/mschaara/install/mpich-52.2/bin/:$PATH
 ```
 
 The server YAML file is provided at [server.yml](https://github.com/daos-stack/daos-reproducibility/blob/aurora_sc23/io500/sc23/aurora/server.yml).
+The io500 configuration is available at [io500-config.ini](https://github.com/daos-stack/daos-reproducibility/blob/aurora_sc23/io500/sc23/aurora/io500-config-production.ini)
 
 ## FAULT TOLERANCE MECHANISMS
 
@@ -153,7 +154,7 @@ The server YAML file is provided at [server.yml](https://github.com/daos-stack/d
 
 The Aurora hardware and software storage system is able to provide full fault tolerance at various levels of reduendancy depedending on the component.
 * Power
-  * ALCF has a dual-feed from Commerial and UPS allowing either feed to fail but the system to continue operating.
+  * ALCF has a dual-feed from Commerial and UPS power allowing either feed to fail but the system to continue operating.
   * Storage servers have 2+1 power supplies allowing a single power supply failure on any server, or rack PDU failure.
 * Networking
   * Each storage server is connected to two different switches, however, each DAOS engine is connected to a single NIC. If a NIC fails, the IO engine is unreachable and the system must reconstruct from another server.
@@ -210,7 +211,7 @@ DAOS is a standalone storage system, and the DAOS POSIX container used in the IO
 The benchmark was run by Intel DAOS staff who have extensive experience in running and assessing the benchmark.
 The benchmark was run a few times with various tuning changes applied to find the optimal performance.
 The results for each stage fall below the theoretical peaks for any of the hardware components.
-The storage system was *not* shutdown and then restarted to confirm that data was durable, however, DAOS is used in our test system and we have confirmed DAOS is able to stora data durably between storage restarts.
+The storage system was *not* shutdown and then restarted to confirm that data was durable, however, DAOS is used in our test system and we have confirmed DAOS is able to store data durably between storage restarts.
 
 ## REPRODUCIBILITY
 
@@ -225,5 +226,5 @@ The storage system was *not* shutdown and then restarted to confirm that data wa
 > * Proprietary
 > * Fully Reproducible
 
-This submission should be assigned the *Fully Reproducible* score.
+This submission should be assigned the *Fully Reproducible* score based on the io500 criteria.
 
