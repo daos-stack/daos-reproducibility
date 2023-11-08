@@ -1,0 +1,23 @@
+########################################################################
+#                                                                      #
+# daos_agent.yml configuration file for LRZ SNG-Phase2 (DAOS v2.4)     #
+#                                                                      #
+########################################################################
+
+name: daos_server
+
+access_points:
+- m02r01s01dao:10001
+- m02r02s01dao:10001
+- m02r03s01dao:10001
+
+port: 10001
+
+transport_config:
+  allow_insecure: false
+  ca_cert: /etc/daos/certs/daosCA.crt
+  key:     /etc/daos/certs/agent.key
+  cert:    /etc/daos/certs/agent.crt
+
+log_file: /var/daos/daos_agent.log
+

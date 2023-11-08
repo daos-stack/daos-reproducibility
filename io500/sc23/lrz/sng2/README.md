@@ -104,7 +104,9 @@ These represent the production-level setup of the storage system:
 * [/etc/daos/daos\_agent.yml](daos_agent.yml)
 * [/etc/sysctl.d/95-daos-net.conf](95-daos-net.conf)
 
-For the IO500 benchmarks, one storage pool was created that spans all [42 servers](create-pool-42srv.sh).
+For the IO500 benchmarks, one storage pool was created that spans all 42 servers,
+using the [create-pool.sh](create-pool.sh) script.
+In that pool, a DAOS POSIX container was created using the [create-cont.sh](create-cont.sh) script.
 
 ### Client environment
 
@@ -129,12 +131,12 @@ or Erasure Coding to maximize the achievable performance.
 
 ## IO500 List Entries
 
-* SuperMUC-NG-Phase2-EC:    [SC23          Production List #??](https://io500.org/list/sc23/io500),
-  submission [???](https://io500.org/submissions/view/???)
-* SuperMUC-NG-Phase2-10-EC: [ISC23 10-Node Production List #??](https://io500.org/list/isc23/ten),
-  submission [669](https://io500.org/submissions/view/669)
-* SuperMUC-NG-Phase2:       [SC23          Research   List #??](https://io500.org/list/sc23/production),
-  submission [???](https://io500.org/submissions/view/???)
-* SuperMUC-NG-Phase2-10:    [ISC23 10-Node Research   List #??](https://io500.org/list/isc23/ten-production),
-  submission [671](https://io500.org/submissions/view/671)
+* SuperMUC-NG-Phase2-EC:    [SC23         Production List #??](https://io500.org/list/sc23/io500),
+  submission [683](https://io500.org/submissions/view/683)
+* SuperMUC-NG-Phase2-10-EC: [SC23 10-Node Production List #??](https://io500.org/list/isc23/ten),
+  submission [669](https://io500.org/submissions/view/669) (from ISC23)
+* SuperMUC-NG-Phase2:       [SC23         Research   List #??](https://io500.org/list/sc23/production),
+  submission [684](https://io500.org/submissions/view/684)
+* SuperMUC-NG-Phase2-10:    [SC23 10-Node Research   List #??](https://io500.org/list/isc23/ten-production),
+  submission [671](https://io500.org/submissions/view/671) (from ISC23)
 
