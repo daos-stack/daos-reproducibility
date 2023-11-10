@@ -152,7 +152,8 @@ The io500 configuration is available at [io500-config.ini](https://github.com/da
 > Please list any additional information needed to determine whether this system has a single point
 > of failure.
 
-The Aurora hardware and software storage system is able to provide full fault tolerance at various levels of reduendancy depedending on the component.
+The Aurora hardware and software storage system is able to provide full fault tolerance at various levels of redundancy depedending on the component.
+
 * Power
   * ALCF has a dual-feed from Commerial and UPS power allowing either feed to fail but the system to continue operating.
   * Storage servers have 2+1 power supplies allowing a single power supply failure on any server, or rack PDU failure.
