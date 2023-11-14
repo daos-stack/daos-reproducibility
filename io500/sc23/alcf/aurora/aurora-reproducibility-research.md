@@ -134,8 +134,9 @@ export LD_LIBRARY_PATH=/scratchbox/daos/mschaara/install/mpich-52.2/lib/:$LD_LIB
 export PATH=/scratchbox/daos/mschaara/install/mpich-52.2/bin/:$PATH
 ```
 
-The server YAML file is provided at [server.yml](https://github.com/daos-stack/daos-reproducibility/blob/aurora_sc23/io500/sc23/aurora/server.yml).
-The io500 configuration is available at [io500-config.ini](https://github.com/daos-stack/daos-reproducibility/blob/aurora_sc23/io500/sc23/aurora/io500-config-research.ini)
+The server YAML file is provided at [daos_server.yml](daos_server.yml).
+The io500 configuration is available at
+[io500-config-research.ini](io500-config-research.ini)
 
 ## FAULT TOLERANCE MECHANISMS
 
