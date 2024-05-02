@@ -1,0 +1,14 @@
+access_points:
+  - bdaos1.opa.hlrn.de
+  - bdaos10.opa.hlrn.de
+  - bdaos20.opa.hlrn.de
+
+transport_config:
+  allow_insecure: true
+
+log_file: /var/log/daos/agent.log
+
+# for compute nodes: exclude ethernet interface
+exclude_fabric_ifaces:
+  - lo
+  - eno1

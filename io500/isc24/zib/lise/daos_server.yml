@@ -1,0 +1,106 @@
+########################################################################
+#                                                                      #
+# daos_server.yml configuration file for ZIB Lise (DAOS v2.4)          #
+#                                                                      #
+# 20x Cascade Lake serves with:                                        #
+# * 2x Xeon 6240R                                                      #
+# * 12x 128GB Optane DC PMem 100                                       #
+# * 4x 6.4TB U.2 P4610 NVMe                                            #
+# * 2x Omni-Path 100 (TCP provider, OPX is not ready yet)              #
+#                                                                      #
+# 2023-11-02 Michael Hennecke <michael.hennecke@intel.com>             #
+#                                                                      #
+########################################################################
+
+name: daos_server
+
+access_points:
+  - bdaos1.opa.hlrn.de
+  - bdaos10.opa.hlrn.de
+  - bdaos20.opa.hlrn.de
+
+port: 10001
+
+transport_config:
+  allow_insecure: true
+
+socket_dir: /var/run/daos_server
+
+disable_vfio: false
+disable_vmd: true
+enable_hotplug: false
+
+control_log_mask: DEBUG
+control_log_file: "/var/log/daos/daos_server.log"
+helper_log_file: "/var/log/daos/daos_server_helper.log"
+firmware_helper_log_file: ""
+
+telemetry_port: 9191
+
+fault_path: ""
+fault_cb: ""
+
+hyperthreads: false
+
+#provider: ofi+tcp
+provider: ofi+tcp;ofi_rxm
+
+crt_timeout: 120
+
+engines:
+
+-
+  pinned_numa_node: 0
+  targets: 16
+  nr_xs_helpers: 4
+
+  fabric_iface: ib0
+  fabric_iface_port: 20000
+
+  log_mask: INFO
+  log_file: /var/log/daos/daos_engine.0.log
+
+  env_vars:
+  - FI_LOG_LEVEL="warn"
+  - DD_MASK=all
+  - DD_SUBSYS=all
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /mnt/daos0
+    scm_list: [/dev/pmem0]
+  -
+    class: nvme
+    bdev_list:
+    - 0000:5e:00.0
+    - 0000:5f:00.0
+
+-
+  pinned_numa_node: 1
+  targets: 16
+  nr_xs_helpers: 4
+
+  fabric_iface: ib1
+  fabric_iface_port: 21000
+
+  log_mask: INFO
+  log_file: /var/log/daos/daos_engine.1.log
+
+  env_vars:
+  - FI_LOG_LEVEL="warn"
+  - DD_MASK=all
+  - DD_SUBSYS=all
+
+  storage:
+  -
+    class: dcpm
+    scm_mount: /mnt/daos1
+    scm_list: [/dev/pmem1]
+  -
+    class: nvme
+    bdev_list:
+    - 0000:d8:00.0
+    - 0000:d9:00.0
+
+#E_O_F

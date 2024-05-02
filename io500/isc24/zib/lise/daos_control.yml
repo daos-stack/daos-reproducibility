@@ -1,0 +1,24 @@
+hostlist:
+  - bdaos1.opa.hlrn.de
+  - bdaos2.opa.hlrn.de
+  - bdaos3.opa.hlrn.de
+  - bdaos4.opa.hlrn.de
+  - bdaos5.opa.hlrn.de
+  - bdaos6.opa.hlrn.de
+  - bdaos7.opa.hlrn.de
+  - bdaos8.opa.hlrn.de
+  - bdaos9.opa.hlrn.de
+  - bdaos10.opa.hlrn.de
+  - bdaos11.opa.hlrn.de
+  - bdaos12.opa.hlrn.de
+  - bdaos13.opa.hlrn.de
+  - bdaos14.opa.hlrn.de
+  - bdaos15.opa.hlrn.de
+  - bdaos16.opa.hlrn.de
+#  - bdaos17.opa.hlrn.de
+  - bdaos18.opa.hlrn.de
+  - bdaos19.opa.hlrn.de
+  - bdaos20.opa.hlrn.de
+
+transport_config:
+  allow_insecure: true
