@@ -25,3 +25,10 @@ documents.
 The "Lise" system at ZIB provides HPC services for the German NHR community.
 
 
+## IO500 List Entries
+
+* Lise: [SC25         Production List  #5](https://io500.org/list/isc24/production),
+  submission [703](https://io500.org/submissions/view/703)
+* Lise: [SC25 10-Node Production List  #3](https://io500.org/list/isc24/ten-production),
+  submission [703](https://io500.org/submissions/view/703)
+

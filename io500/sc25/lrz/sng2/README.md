@@ -87,7 +87,7 @@ All servers and clients were installed with the following software stack:
 
 * [SLES 15.5](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP5/)
   (kernel version 5.14.21-150500.55.65-default)
-* [MLNX\_OFED\_LINUX-23.04-1.1.3.0](https://docs.nvidia.com/networking/display/MLNXOFEDv23041130/Release+Notes)
+* [MLNX\_OFED\_LINUX-24.04-0.6.6.0](https://docs.nvidia.com/networking/display/mlnxofedv24040660/release+notes)
 * [DAOS 2.6.4-2](https://packages.daos.io/v2.6.4/)
 * [MPICH-4.1.1](https://www.mpich.org/downloads/)
 
@@ -126,12 +126,12 @@ or Erasure Coding to maximize the achievable performance.
 
 ## IO500 List Entries
 
-* SuperMUC-NG-Phase2-EC:    [SC25         Production List #??](https://io500.org/list/sc25/io500),
+* SuperMUC-NG-Phase2-EC:    [SC25         Production List  #2](https://io500.org/list/sc25/production),
   submission [772](https://io500.org/submissions/view/772)
-* SuperMUC-NG-Phase2-10-EC: [SC25 10-Node Production List #??](https://io500.org/list/sc25/ten),
+* SuperMUC-NG-Phase2-10-EC: [SC25 10-Node Production List  #2](https://io500.org/list/sc25/ten-production),
   submission [774](https://io500.org/submissions/view/774)
-* SuperMUC-NG-Phase2:       [SC25         Research   List #??](https://io500.org/list/sc25/production),
+* SuperMUC-NG-Phase2:       [SC25         Research   List  #6](https://io500.org/list/sc25/io500),
   submission [773](https://io500.org/submissions/view/773)
-* SuperMUC-NG-Phase2-10:    [SC25 10-Node Research   List #??](https://io500.org/list/sc25/ten-production),
+* SuperMUC-NG-Phase2-10:    [SC25 10-Node Research   List #10](https://io500.org/list/sc25/ten),
   submission [775](https://io500.org/submissions/view/775)
 
